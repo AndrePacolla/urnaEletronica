@@ -1,1 +1,49 @@
+*{
+    box-sizing: border-box;
+    font-family:Times;
+}
 
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.urna{
+    display: flex;
+    padding: 30px;
+    background-color: #8aafac;
+
+}
+
+.tela{
+    width: 700px;
+    height: 302px;
+    background: linear-gradient(to right,#e8e8e8,#c1c1c1);
+
+}
+
+.teclado{
+    margin-left: 30px;
+    background-color: #403a3a;
+}
+
+.teclado--botao{
+    width: 70px;
+    height: 40px;
+    color: #fff;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 2px 3px 0px #555 ;
+}
+.teclado--linha{
+    display: flex;
+    justify-content: center;
+}
