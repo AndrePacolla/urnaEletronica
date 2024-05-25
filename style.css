@@ -4,13 +4,18 @@
 }
 
 body{
+    height: 100vh;
     margin: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
-
+    background: linear-gradient(#c1c1c1,#333);
+    flex-direction: column;
+    justify-content: center;
 }
-
+.title{
+    color: white;
+    font-size: 20px;
+}
 .urna{
     display: flex;
     padding: 30px;
@@ -19,8 +24,11 @@ body{
 }
 
 .tela{
+    display: flex;
+    flex-direction: column;
     width: 700px;
     height: 302px;
+    border: 2px solid #333;
     background: linear-gradient(to right,#e8e8e8,#c1c1c1);
 
 }
@@ -30,20 +38,69 @@ body{
     background-color: #403a3a;
 }
 
+
 .teclado--botao{
     width: 70px;
     height: 40px;
     color: #fff;
     font-size: 25px;
     display: flex;
-    justify-content: center;
+    justify-content: center;   
     align-items: center;
     background-color: #000;
     margin: 10px;
     cursor: pointer;
     box-shadow: 2px 3px 0px #555 ;
 }
+
+.teclado--botao:hover{
+    transform: scale(0.7);
+    transition: 1s;
+}
 .teclado--linha{
     display: flex;
     justify-content: center;
+    align-items: end;
 }
+
+.btn--branco{
+    width: 80px;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: white;
+}
+.btn--corrige{
+    width: 80px;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: orange;
+}
+.btn--confirma{
+    width: 90px;
+    height: 50px;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #48c079;
+}
+
+.d-1{
+    flex: 1;
+    display: flex;
+}
+
+.d-1-left{
+    flex: 1;
+}
+.d-1-right{
+    width: 90px;
+}
+.d-2{
+ padding-left: 10px;
+ height: 50px;
+ font-size: 14px;
+ border-top: 2px solid #333;
+}
+
