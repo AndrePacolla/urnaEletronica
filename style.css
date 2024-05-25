@@ -4,13 +4,13 @@
 }
 
 body{
-    height: 100vh;
     margin: 0;
+    height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(#c1c1c1,#333);
     flex-direction: column;
     justify-content: center;
+    background: linear-gradient(#575757,#000000);
 }
 .title{
     color: white;
@@ -25,10 +25,10 @@ body{
 
 .tela{
     display: flex;
-    flex-direction: column;
     width: 700px;
     height: 302px;
     border: 2px solid #333;
+    flex-direction: column;
     background: linear-gradient(to right,#e8e8e8,#c1c1c1);
 
 }
@@ -54,7 +54,7 @@ body{
 }
 
 .teclado--botao:hover{
-    transform: scale(0.7);
+    transform: scale(0.9);
     transition: 1s;
 }
 .teclado--linha{
