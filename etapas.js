@@ -8,7 +8,7 @@ let etapas = [
         nome: 'Fulano de tal',
         partido: 'ABC',
         fotos:[
-            {url:'38111.jpg', legenda: 'Vereador', small :false}
+            {url:'38111.jpg', legenda: 'Vereador'}
         ]
         }, 
         {
