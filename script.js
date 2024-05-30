@@ -15,7 +15,6 @@ let etapaAtual = 0;
 
 
 function comecarEtapa(){
-
     let etapa = etapas[etapaAtual];
    
     let divNumero = '';
@@ -40,7 +39,30 @@ function comecarEtapa(){
 }
 
 function atualizaInterface(){
-  alert('finalizou de digitar o voto') 
+  let etapa = etapas[etapaAtual];
+  let candidato = etapa.candidatos.filter((item)=>{
+    if(item.numero === numero) {
+      return true
+    }else{
+      return false
+    }
+  });
+
+  if(candidato.length >= 0){ // se filtro retornar true , ou seja comprimento do candidato for maior que zero
+    candidato = candidato[0]; // estou passando pra variavel a posiçao que irei manipular os dados no caso vereador,se nao fizer isso os dados da como indefinido
+    seuVotoPara.style.display ='block';
+    aviso.style.display = 'block';
+    desc.innerHTML = `Nome :${candidato.nome} <br/>Partido: ${candidato.partido}`;
+
+    let fotos = ''
+
+    for(let i  in candidato.fotos){
+      fotos += ` <div class="d-1-img"><img src="assets/${candidato.fotos[i].url}" alt="">${candidato.fotos[i].legenda}</div>`
+
+    }   
+    lateralImg.innerHTML = fotos;
+  }
+
 
 }
 
@@ -74,4 +96,4 @@ function confirma(){
 
 }
 
-comecarEtapa();
+comecarEtapa()
