@@ -5,53 +5,59 @@ let aviso = document.querySelector('.d-2');
 let lateralImg = document.querySelector('.d-1-right'); 
 let numeros = document.querySelector('.d-1-3');
 
+// variavel de ambiente (global)
 
-let etapaAtual = 0;  // incio do array
-let numero = ''; // ta pegando numero do teclado 
+let numero = ''; 
+let etapaAtual = 0;  
 
 
 
 
 
 function comecarEtapa(){
-    // 1 limpar tela
-    // 2 pegar informaçoes atuais do meu array posicao 0
-    // 3 preencher essas informaçoes na tela
 
-    let etapa = etapas[etapaAtual] //  etapa recebe dados do array posição zero (vereador)
+    let etapa = etapas[etapaAtual];
+   
+    let divNumero = '';
 
-    let numeroHtml = '' //  variavel fora para ser utilizada globalmente ,vou preencher com os loops
 
-    for(let i=0; i< etapa.numeros; i++){
-        if(i === 0 ){
-            numeroHtml += `<div class="numero pisca"></div>`
-
-        }else{
-            numeroHtml += `<div class="numero"></div>`
-        }
+    for(let i=0; i<etapa.numeros; i++){
+      if(i === 0){
+        divNumero += `<div class="numero pisca"></div>`
+      }else{
+        divNumero += `<div class="numero"></div>`
+      }
     }
 
-    seuVotoPara.style.display= 'none' // estou atigindo o span diretamente
+
+    seuVotoPara.style.display= 'none' 
     cargo.innerHTML = etapa.titulo;
     desc.innerHTML='';
     aviso.style.display = 'none'; 
     lateralImg.innerHTML = '';
-    numeros.innerHTML = numeroHtml;
+    numeros.innerHTML = divNumero;
     
 }
 
 function atualizaInterface(){
+  alert('finalizou de digitar o voto') 
 
 }
 
 function clicou(n){
     let piscaNumero = document.querySelector('.numero.pisca');
 
-    if(piscaNumero !== null){ // se tem class pisca
+    if(piscaNumero !== null){ 
         piscaNumero.style.borderColor = 'red'
-        
         piscaNumero.innerHTML = n 
-        numero = `${numero}${n}` 
+        numero = `${numero}${n}` // 2 let  concatenado
+
+      piscaNumero.classList.remove('pisca');
+      if(piscaNumero.nextElementSibling !== null){
+        piscaNumero.nextElementSibling.classList.add('pisca')
+      }else{
+        atualizaInterface();
+      }
     }
 
 
