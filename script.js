@@ -48,8 +48,8 @@ function atualizaInterface(){
     }
   });
 
-  if(candidato.length >= 0){ // se filtro retornar true , ou seja comprimento do candidato for maior que zero
-    candidato = candidato[0]; // estou passando pra variavel a posiçao que irei manipular os dados no caso vereador,se nao fizer isso os dados da como indefinido
+  if(candidato.length > 0){ // se filtro retornar true , ou seja comprimento do candidato for maior que zero
+    candidato = candidato[0]; // alem dessa variavel conter filter , ela agr esta contendo a posição 0 array
     seuVotoPara.style.display ='block';
     aviso.style.display = 'block';
     desc.innerHTML = `Nome :${candidato.nome} <br/>Partido: ${candidato.partido}`;
@@ -58,12 +58,16 @@ function atualizaInterface(){
 
     for(let i  in candidato.fotos){
       fotos += ` <div class="d-1-img"><img src="assets/${candidato.fotos[i].url}" alt="">${candidato.fotos[i].legenda}</div>`
-
     }   
+
     lateralImg.innerHTML = fotos;
+  }else{
+
+    seuVotoPara.style.display ='block';
+    aviso.style.display = 'block';
+    desc.innerHTML = '<div class="aviso--grande">VOTO NULO</div>';
+
   }
-
-
 }
 
 function clicou(n){
@@ -96,4 +100,4 @@ function confirma(){
 
 }
 
-comecarEtapa()
+comecarEtapa();
