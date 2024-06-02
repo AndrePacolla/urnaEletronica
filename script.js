@@ -93,9 +93,8 @@ function branco(){
     aviso.style.display = 'block';
     numeros.innerHTML = '';
     desc.innerHTML = '<div class="aviso--grande pisca">VOTO EM BRANCO </div>'
-
-    
-
+  }else{
+    alert('Para votar em Branco, não é permitido preenchimento de número(s)')
   }
 };
 
@@ -105,6 +104,13 @@ function corrige(){
 
 function confirma(){
 
+  let etapa = etapas[etapaAtual];
+
+  if(btnBranco === true){
+    console.log('voto branco')
+  }else if(numero.length === etapa.numeros){
+    console.log('Confirmando como' +numero)
+  }
 };
 
 comecarEtapa();
