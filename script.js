@@ -9,16 +9,16 @@ let numeros = document.querySelector('.d-1-3');
 
 let numero = ''; 
 let etapaAtual = 0;  
-
-
-
+let btnBranco = false;
 
 
 function comecarEtapa(){
     let etapa = etapas[etapaAtual];
    
-    let divNumero = '';
+    numero = '';
+    btnBranco = false;
 
+    let divNumero = '';
 
     for(let i=0; i<etapa.numeros; i++){
       if(i === 0){
@@ -48,25 +48,23 @@ function atualizaInterface(){
     }
   });
 
-  if(candidato.length > 0){ // se filtro retornar true , ou seja comprimento do candidato for maior que zero
-    candidato = candidato[0]; // alem dessa variavel conter filter , ela agr esta contendo a posição 0 array
+  if(candidato.length > 0){ 
+    candidato = candidato[0]; // se tem array (filter), tenho que achar (especificar)
     seuVotoPara.style.display ='block';
     aviso.style.display = 'block';
     desc.innerHTML = `Nome :${candidato.nome} <br/>Partido: ${candidato.partido}`;
 
-    let fotos = ''
+    let fotos = '';
 
-    for(let i  in candidato.fotos){
+    for(let i in candidato.fotos){
       fotos += ` <div class="d-1-img"><img src="assets/${candidato.fotos[i].url}" alt="">${candidato.fotos[i].legenda}</div>`
-    }   
+    }  
 
     lateralImg.innerHTML = fotos;
-  }else{
-
+  }else{//voto NULO
     seuVotoPara.style.display ='block';
     aviso.style.display = 'block';
-    desc.innerHTML = '<div class="aviso--grande">VOTO NULO</div>';
-
+    desc.innerHTML = '<div class="aviso--grande pisca">VOTO NULO</div>';
   }
 }
 
@@ -76,7 +74,7 @@ function clicou(n){
     if(piscaNumero !== null){ 
         piscaNumero.style.borderColor = 'red'
         piscaNumero.innerHTML = n 
-        numero = `${numero}${n}` // 2 let  concatenado
+        numero = `${numero}${n}` 
 
       piscaNumero.classList.remove('pisca');
       if(piscaNumero.nextElementSibling !== null){
@@ -85,19 +83,28 @@ function clicou(n){
         atualizaInterface();
       }
     }
-
-
 }
-
 function branco(){
-}
+
+  if(numero === ''){
+    btnBranco = true;
+
+    seuVotoPara.style.display ='block';
+    aviso.style.display = 'block';
+    numeros.innerHTML = '';
+    desc.innerHTML = '<div class="aviso--grande pisca">VOTO EM BRANCO </div>'
+
+    
+
+  }
+};
 
 function corrige(){
-
-}
+  comecarEtapa();
+};
 
 function confirma(){
 
-}
+};
 
 comecarEtapa();
