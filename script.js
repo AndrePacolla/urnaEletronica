@@ -129,6 +129,7 @@ function confirma(){
       cargo.innerHTML = '';
       seuVotoPara.style.display= 'none'; 
       numeros.innerHTML = '';
+      lateralImg.innerHTML = '';
       desc.innerHTML = '<div class="aviso--extraGrande pisca"> FIM </div>'; 
 
     }
