@@ -105,12 +105,32 @@ function corrige(){
 function confirma(){
 
   let etapa = etapas[etapaAtual];
+  let votoConfirmado = false;
 
-  if(btnBranco === true){
-    console.log('voto branco')
-  }else if(numero.length === etapa.numeros){
-    console.log('Confirmando como' +numero)
-  }
+  // duas verificaçoes tanto no voto em branco quanto no voto preenchido !
+
+  if(btnBranco === true){ // si 
+    votoConfirmado = true;
+  }else if(numero.length === etapa.numeros){ // ou se 
+    votoConfirmado = true;
+  };
+
+
+  if(votoConfirmado){
+    etapaAtual++;  // incrementando 
+    if(etapas[etapaAtual] !== undefined){
+      comecarEtapa();
+    }else{
+      cargo.innerHTML = '';
+      seuVotoPara.style.display= 'none'; 
+      numeros.innerHTML = '';
+      desc.innerHTML = '<div class="aviso--extraGrande pisca"> FIM </div>'; 
+
+    }
+
+  };
+
 };
+
 
 comecarEtapa();
