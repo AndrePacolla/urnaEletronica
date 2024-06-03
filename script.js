@@ -49,7 +49,7 @@ function atualizaInterface(){
   });
 
   if(candidato.length > 0){ 
-    candidato = candidato[0]; // se tem array (filter), tenho que achar (especificar)
+    candidato = candidato[0]; // filter retornou novo array , preciso ESPECIFICAR esse novo array !
     seuVotoPara.style.display ='block';
     aviso.style.display = 'block';
     desc.innerHTML = `Nome :${candidato.nome} <br/>Partido: ${candidato.partido}`;
@@ -57,7 +57,12 @@ function atualizaInterface(){
     let fotos = '';
 
     for(let i in candidato.fotos){
-      fotos += ` <div class="d-1-img"><img src="assets/${candidato.fotos[i].url}" alt="">${candidato.fotos[i].legenda}</div>`
+      if(candidato.fotos[i].small){
+        fotos += ` <div class="d-1-img small"><img src="assets/${candidato.fotos[i].url}" alt="">${candidato.fotos[i].legenda}</div>`
+      }else{
+        fotos += ` <div class="d-1-img"><img src="assets/${candidato.fotos[i].url}" alt="">${candidato.fotos[i].legenda}</div>`
+      }
+     
     }  
 
     lateralImg.innerHTML = fotos;
