@@ -34,7 +34,6 @@ body{
     border: 2px solid #333;
     flex-direction: column;
     background: linear-gradient(to right,#e8e8e8,#c1c1c1);
-
 }
 
 .teclado{
@@ -98,7 +97,7 @@ body{
 .d-1-left{
     flex: 1; 
     display: flex;
-    padding-left: 20px;
+    padding-left: 0px;
     flex-direction: column;
 }
 .d-1-1{
@@ -180,3 +179,36 @@ body{
     50%{ opacity: 1;}
     100%{ opacity: 0.2;}
 }
+
+@media(max-width: 400px){
+
+    .urna{
+        display: flex;
+        flex-direction: column;
+    }
+    .tela{
+        width: 100%;
+        background: linear-gradient(to bottom,#dddddd,#a1a1a1);
+    }
+    .d-1-right{
+        width: 100px;
+    }
+    .d-2{
+        height: 70px;
+        padding-top: 10px;
+        
+    }
+    .teclado{
+        margin-left: 0px;
+        padding: 10px
+    }
+    
+    .aviso--grande{
+        font-size: 24px;
+    }
+    .aviso--extraGrande{
+        width: 100%;
+        margin-left: 50px;
+        font-size: 75px;
+    }
+};

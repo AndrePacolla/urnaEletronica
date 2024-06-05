@@ -131,12 +131,8 @@ function confirma(){
       numeros.innerHTML = '';
       lateralImg.innerHTML = '';
       desc.innerHTML = '<div class="aviso--extraGrande pisca"> FIM </div>'; 
-
     }
-
   };
-
 };
-
 
 comecarEtapa();
